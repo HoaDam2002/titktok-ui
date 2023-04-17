@@ -1,5 +1,8 @@
 .wrapper {
-    height: 60px;
+    --search-border-radius: 92px;
+    --search-button-width: 52px;
+
+    height: var(--default-header-height);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
 }
 
@@ -8,4 +11,130 @@
     height: 100%;
     padding-left: 16px;
     padding-right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    min-width: 300px;
+
+    img {
+        display: block;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.search {
+    width: 415px;
+    height: 46px;
+    padding-left: 16px;
+    background-color: rgba(22, 24, 35, 0.06);
+    border-radius: var(--search-border-radius);
+    display: flex;
+    position: relative;
+    border: 1.5px solid transparent;
+
+    input {
+        height: 100%;
+        padding: 12px 0;
+        color: rgba(22, 24, 35, 1);
+        font-size: 1.6rem;
+        font-weight: 400;
+        background-color: transparent;
+        caret-color: rgba(254, 44, 85, 1);
+        flex: 1;
+    }
+
+    input:not(:placeholder-shown) ~ .search-btn {
+        color: rgba(22, 24, 35, 0.75);
+    }
+
+    &::after {
+        content: '';
+        width: 1px;
+        height: 28px;
+        background-color: rgba(22, 24, 35, 0.12);
+        position: absolute;
+        top: 9px;
+        right: 52px;
+    }
+
+    &:focus-within {
+        border-color: rgba(22, 24, 35, 0.2);
+    }
+}
+
+.clear,
+.loading {
+    position: absolute;
+    top: 50%;
+    right: calc(var(--search-button-width) + 16px);
+    //bù lại top 50% để vào giữa
+    transform: translateY(-50%);
+    color: rgba(22, 24, 35, 0.34);
+    font-size: 1.6rem;
+}
+
+.loading {
+}
+
+.search-btn {
+    width: var(--search-button-width);
+    height: 100%;
+    border-top-right-radius: var(--search-border-radius);
+    border-bottom-right-radius: var(--search-border-radius);
+    font-size: 2rem;
+    color: #a7a7ab;
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+
+    &:active {
+        background-color: rgba(22, 24, 35, 0.06);
+    }
+}
+
+.actions {
+}
+
+.upload {
+    height: 36px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    padding: 0 16px;
+    background-color: var(--white);
+    border-radius: 4px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        cursor: pointer;
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.login {
+    height: 36px;
+    font-size: 1.6rem;
+    margin: 16px;
+    padding: 0 8px;
+    font-weight: 700;
+    color: var(--white);
+    background-color: var(--primary);
+    border-radius: 4px;
+
+    &:hover {
+        cursor: pointer;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), #fe2c55;
+    }
+}
+
+.other {
+    padding: 0 4px;
+    margin: 0 0 0 4px;
 }

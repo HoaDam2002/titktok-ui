@@ -3,6 +3,10 @@
 
 :root {
     --primary: #fe2c55;
+    --default-header-height: 60px;
+    --black: #000;
+    --white: #fff;
+    --text: #333;
 }
 
 * {
@@ -21,4 +25,17 @@ body {
     line-height: 1.5;
     //tối ưu tốc độc tải chữ
     text-rendering: optimizeSpeed;
+    color: var(--text);
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a[href] {
+    color: var(--text);
+    text-decoration: none;
 }
