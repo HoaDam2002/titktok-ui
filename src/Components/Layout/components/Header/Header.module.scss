@@ -27,15 +27,17 @@
         cursor: pointer;
     }
 }
-
-.search {
+.search,
+.search-result {
     width: 415px;
+}
+.search {
+    position: relative;
     height: 46px;
     padding-left: 16px;
     background-color: rgba(22, 24, 35, 0.06);
     border-radius: var(--search-border-radius);
     display: flex;
-    position: relative;
     border: 1.5px solid transparent;
 
     input {
@@ -100,6 +102,13 @@
     }
 }
 
+.search-title {
+    padding: 5px 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: rgba(22, 24, 35, 0.5);
+}
+
 .actions {
 }
 
@@ -134,7 +143,10 @@
     }
 }
 
-.other {
+.more-btn {
+    font-size: 2rem;
+    margin-left: 16px;
     padding: 0 4px;
-    margin: 0 0 0 4px;
+    cursor: pointer;
+    background: none;
 }
