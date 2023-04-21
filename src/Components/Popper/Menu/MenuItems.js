@@ -6,7 +6,7 @@ const cx = classNames.bind(styles);
 
 function MenuItems({ data }) {
     return (
-        <Button leftIcon={data.icon} to={data.to} classNames={cx('menu-item')}>
+        <Button className={cx('menu-item')} leftIcon={data.icon} to={data.to}>
             {data.title}
         </Button>
     );

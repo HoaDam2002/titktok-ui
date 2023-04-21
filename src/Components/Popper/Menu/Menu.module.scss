@@ -2,7 +2,21 @@
     width: 224px;
 
     .menu-item {
+        cursor: pointer;
         margin-left: 0;
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        display: flex;
+        padding: 10px 8px 10px 16px;
+        background: none;
+    }
+}
+
+.menu-item {
+    width: 100%;
+    min-width: 48px;
+    justify-content: flex-start;
+    border-radius: 0;
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
     }
 }
