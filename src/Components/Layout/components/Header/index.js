@@ -17,11 +17,14 @@ import {
 import React from 'react';
 import Tippy from '@tippyjs/react/'; // different import path!
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
+
 import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Button from '~/Components/Button';
 import Menu from '~/Components/Popper/Menu';
 import Search from '~/Components/Layout/components/Search';
+import routesConfig from '~/config/routes';
 
 const cx = classNames.bind(styles);
 const currentUser = true;
@@ -32,6 +35,56 @@ const MENU_ITEMS = [
         children: {
             title: 'Ngôn ngữ',
             data: [
+                {
+                    type: 'language',
+                    code: 'vn',
+                    title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vn',
+                    title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vn',
+                    title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vn',
+                    title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
+                {
+                    type: 'language',
+                    code: 'vn',
+                    title: 'Tiếng việt',
+                },
+                {
+                    type: 'language',
+                    code: 'eng',
+                    title: 'English',
+                },
                 {
                     type: 'language',
                     code: 'vn',
@@ -92,9 +145,9 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <div className={cx('logo')}>
+                <Link to={routesConfig.home} className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
-                </div>
+                </Link>
 
                 {/* search */}
                 <Search />
@@ -124,7 +177,7 @@ function Header() {
                             <Button primary>Đăng nhập</Button>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange} hideOnClick={false}>
                         {currentUser ? (
                             <img
                                 className={cx('user-avartar')}

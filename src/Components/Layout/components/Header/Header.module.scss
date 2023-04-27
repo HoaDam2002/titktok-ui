@@ -2,8 +2,14 @@
     --search-border-radius: 92px;
     --search-button-width: 52px;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     height: var(--default-header-height);
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12);
+    background-color: #fff;
 }
 
 .inner {
