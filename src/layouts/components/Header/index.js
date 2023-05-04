@@ -23,8 +23,8 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import Button from '~/Components/Button';
 import Menu from '~/Components/Popper/Menu';
-import Search from '~/Components/Layout/components/Search';
-import routesConfig from '~/config/routes';
+import Search from '~/layouts/components/Search';
+import config from '~/config';
 
 const cx = classNames.bind(styles);
 const currentUser = true;
@@ -145,7 +145,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routesConfig.home} className={cx('logo')}>
+                <Link to={config.routes.home} className={cx('logo')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
 

@@ -7,8 +7,7 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 import { useEffect, useState, useRef } from 'react';
 import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
-import axios from 'axios';
-import * as request from '~/utils/request';
+import * as httpRequest from '~/utils/httpRequest';
 
 const cx = classNames.bind(styles);
 
@@ -32,7 +31,7 @@ function Search() {
 
         setLoading(true);
         //nếu có kí tự ngăn cách trong api thì sẽ convert sang dữ liệu khác khắc phục lỗi khi nhập &?....
-        request
+        httpRequest
             .get('users/search', {
                 params: {
                     q: debounced,
