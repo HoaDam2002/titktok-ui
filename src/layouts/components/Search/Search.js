@@ -9,20 +9,22 @@ import styles from './Search.module.scss';
 import { useDebounce } from '~/hooks';
 import * as httpRequest from '~/utils/httpRequest';
 
+
 const cx = classNames.bind(styles);
+
+
 
 function Search() {
     const [searchValue, setSearchValue] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
-
     //sử dungk useDebounce
     const debounced = useDebounce(searchValue, 500);
 
     const inputRef = useRef(); //get dom element
 
-    useEffect(() => {
+    useEffect(() => {   
         //khi mà k có value = null  hoặc bằng dấu cách thì return
         if (!debounced.trim()) {
             setSearchResult([]);
